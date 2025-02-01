@@ -37,12 +37,7 @@ const caseStudies = [
       "/lovable-uploads/7200ba93-75d3-4233-9ca7-b0c79ce20d9e.png",
       "/lovable-uploads/9bbad244-8dbb-4546-a0b7-3216cc08cd3f.png"
     ]
-  },
-  {
-    title: "Project Three",
-    description: "Innovative social media campaign that captured the essence of the brand while driving meaningful customer interactions.",
-    imageUrl: "/placeholder.svg",
-  },
+  }
 ];
 
 const Index = () => {
