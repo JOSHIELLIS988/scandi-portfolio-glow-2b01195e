@@ -15,7 +15,6 @@ const caseStudies = [
       "/lovable-uploads/1ef5d7c0-df63-41bb-89d5-eeac6dbe4133.png"
     ],
     socialMediaImages: [
-      "/lovable-uploads/97c3cfa3-736f-46b7-8007-287a02bf5324.png",
       "/lovable-uploads/96743e08-2878-4a6d-9d14-3f1f3803e915.png",
       "/lovable-uploads/ac4b36d3-ee51-4355-bf86-5488f113eb99.png",
       "/lovable-uploads/923fa08a-da48-4843-99dc-289ebdf7c328.png",
