@@ -26,6 +26,13 @@ const caseStudies = [
       "/lovable-uploads/460506f7-2a64-4241-aefd-a416475f93be.png",
       "/lovable-uploads/18a6535f-0859-4414-8461-3dca1edcbc4d.png",
       "/lovable-uploads/99ec765a-b4fd-4daa-8d8d-71214fdb084b.png"
+    ],
+    newsletterImages: [
+      "/lovable-uploads/a51f249c-ec29-4cfa-ab24-f4a0bc4ea150.png",
+      "/lovable-uploads/2d5f8772-eaef-4d54-bedf-2276ee9fab4c.png",
+      "/lovable-uploads/27d909cf-7cda-4aa2-92fd-0486ab905785.png",
+      "/lovable-uploads/54b5c4ae-4360-4e9b-8917-bcbc337ac2ba.png",
+      "/lovable-uploads/8ef877dd-d82a-43f6-9483-29a63b77044b.png"
     ]
   }
 ];
@@ -46,6 +53,7 @@ const Index = () => {
             label={study.label}
             additionalImages={study.additionalImages}
             socialMediaImages={study.socialMediaImages}
+            newsletterImages={study.newsletterImages}
           />
         ))}
       </div>

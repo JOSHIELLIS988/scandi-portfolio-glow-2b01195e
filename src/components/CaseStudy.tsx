@@ -11,6 +11,7 @@ interface CaseStudyProps {
   label?: string;
   additionalImages?: string[];
   socialMediaImages?: string[];
+  newsletterImages?: string[];
   videos?: string[];
 }
 
@@ -22,14 +23,17 @@ const CaseStudy = ({
   label, 
   additionalImages, 
   socialMediaImages,
+  newsletterImages,
   videos 
 }: CaseStudyProps) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentSocialIndex, setCurrentSocialIndex] = useState(0);
+  const [currentNewsletterIndex, setCurrentNewsletterIndex] = useState(0);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const images = additionalImages ? [imageUrl, ...additionalImages] : [imageUrl];
   const socialImages = socialMediaImages ? [...socialMediaImages] : [];
+  const newsletters = newsletterImages ? [...newsletterImages] : [];
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -52,27 +56,41 @@ const CaseStudy = ({
     return () => observer.disconnect();
   }, []);
 
-  const nextImage = (isSocial: boolean) => {
-    if (isSocial) {
-      setCurrentSocialIndex((prevIndex) => 
-        prevIndex === socialImages.length - 1 ? 0 : prevIndex + 1
-      );
-    } else {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
+  const nextImage = (type: 'product' | 'social' | 'newsletter') => {
+    switch(type) {
+      case 'social':
+        setCurrentSocialIndex((prevIndex) => 
+          prevIndex === socialImages.length - 1 ? 0 : prevIndex + 1
+        );
+        break;
+      case 'newsletter':
+        setCurrentNewsletterIndex((prevIndex) => 
+          prevIndex === newsletters.length - 1 ? 0 : prevIndex + 1
+        );
+        break;
+      default:
+        setCurrentImageIndex((prevIndex) => 
+          prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        );
     }
   };
 
-  const previousImage = (isSocial: boolean) => {
-    if (isSocial) {
-      setCurrentSocialIndex((prevIndex) => 
-        prevIndex === 0 ? socialImages.length - 1 : prevIndex - 1
-      );
-    } else {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === 0 ? images.length - 1 : prevIndex - 1
-      );
+  const previousImage = (type: 'product' | 'social' | 'newsletter') => {
+    switch(type) {
+      case 'social':
+        setCurrentSocialIndex((prevIndex) => 
+          prevIndex === 0 ? socialImages.length - 1 : prevIndex - 1
+        );
+        break;
+      case 'newsletter':
+        setCurrentNewsletterIndex((prevIndex) => 
+          prevIndex === 0 ? newsletters.length - 1 : prevIndex - 1
+        );
+        break;
+      default:
+        setCurrentImageIndex((prevIndex) => 
+          prevIndex === 0 ? images.length - 1 : prevIndex - 1
+        );
     }
   };
 
@@ -116,9 +134,6 @@ const CaseStudy = ({
         <div className="lg:w-1/2 space-y-8">
           {additionalImages && (
             <>
-              <span className="text-xs font-medium text-white uppercase tracking-wider mb-1 block">
-                PRODUCT SHOTS
-              </span>
               <div className="relative overflow-hidden rounded-2xl glass group">
                 <img
                   src={images[currentImageIndex]}
@@ -130,7 +145,7 @@ const CaseStudy = ({
                   variant="ghost"
                   size="icon"
                   className="absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
-                  onClick={() => previousImage(false)}
+                  onClick={() => previousImage('product')}
                   aria-label="Previous image"
                 >
                   <ChevronLeft className="h-4 w-4" />
@@ -139,7 +154,7 @@ const CaseStudy = ({
                   variant="ghost"
                   size="icon"
                   className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
-                  onClick={() => nextImage(false)}
+                  onClick={() => nextImage('product')}
                   aria-label="Next image"
                 >
                   <ChevronRight className="h-4 w-4" />
@@ -174,7 +189,7 @@ const CaseStudy = ({
                   variant="ghost"
                   size="icon"
                   className="absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
-                  onClick={() => previousImage(true)}
+                  onClick={() => previousImage('social')}
                   aria-label="Previous social media ad"
                 >
                   <ChevronLeft className="h-4 w-4" />
@@ -183,7 +198,7 @@ const CaseStudy = ({
                   variant="ghost"
                   size="icon"
                   className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
-                  onClick={() => nextImage(true)}
+                  onClick={() => nextImage('social')}
                   aria-label="Next social media ad"
                 >
                   <ChevronRight className="h-4 w-4" />
@@ -194,6 +209,50 @@ const CaseStudy = ({
                       key={i}
                       className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 ${
                         i === currentSocialIndex ? 'bg-white' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
+
+          {newsletterImages && newsletterImages.length > 0 && (
+            <>
+              <span className="text-xs font-medium text-white uppercase tracking-wider mb-1 block">
+                Newsletter Templates
+              </span>
+              <div className="relative overflow-hidden rounded-2xl glass group">
+                <img
+                  src={newsletters[currentNewsletterIndex]}
+                  alt={`${title} newsletter template`}
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
+                  onClick={() => previousImage('newsletter')}
+                  aria-label="Previous newsletter template"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
+                  onClick={() => nextImage('newsletter')}
+                  aria-label="Next newsletter template"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                  {newsletters.map((_, i) => (
+                    <div
+                      key={i}
+                      className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 ${
+                        i === currentNewsletterIndex ? 'bg-white' : 'bg-white/50'
                       }`}
                     />
                   ))}
