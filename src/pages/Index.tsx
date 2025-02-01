@@ -26,6 +26,26 @@ const caseStudies = [
       // Upload your videos and add their URLs here
       // Supported formats: .mp4, .webm, .ogg
     ]
+  },
+  {
+    title: "Eatsy",
+    description: "A food delivery app that connects local restaurants with hungry customers. The project included branding, UI/UX design, mobile app development, and marketing materials.",
+    imageUrl: "/lovable-uploads/2c060979-dbeb-498d-a701-54193a6d8896.png",
+    label: "Client",
+    additionalImages: [
+      "/lovable-uploads/27f0f896-8625-478c-96d4-bfa00ebd8fd2.png",
+      "/lovable-uploads/47d44f5c-b01b-421d-a911-711ef234078a.png",
+      "/lovable-uploads/46947cbb-7837-437d-b5c2-b07ca3e7f186.png"
+    ],
+    socialMediaImages: [
+      "/lovable-uploads/7200ba93-75d3-4233-9ca7-b0c79ce20d9e.png",
+      "/lovable-uploads/6e50ab41-4305-4bbf-9007-0229fb442b4e.png",
+      "/lovable-uploads/9bbad244-8dbb-4546-a0b7-3216cc08cd3f.png",
+      "/lovable-uploads/97c3cfa3-736f-46b7-8007-287a02bf5324.png",
+      "/lovable-uploads/a20bcc5a-e33c-4f55-87a1-5e242c9e89dc.png",
+      "/lovable-uploads/a979f773-c9df-4406-bfa4-9b5a9638b37d.png"
+    ],
+    videos: []
   }
 ];
 
