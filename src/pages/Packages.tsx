@@ -7,7 +7,7 @@ const Packages = () => {
     <main className="relative min-h-screen bg-background">
       <Navigation />
       <div className="container mx-auto px-6 pt-32 pb-16">
-        <h1 className="text-4xl font-semibold mb-8 animate-fade-in">Premium Content Packages</h1>
+        <h1 className="text-4xl font-semibold mb-8 animate-fade-in">Content Packages</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Premium Content Package */}
           <Card className="glass animate-zoom-in">
