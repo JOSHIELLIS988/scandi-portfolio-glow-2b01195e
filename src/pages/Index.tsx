@@ -22,7 +22,10 @@ const caseStudies = [
       "/lovable-uploads/18a6535f-0859-4414-8461-3dca1edcbc4d.png",
       "/lovable-uploads/99ec765a-b4fd-4daa-8d8d-71214fdb084b.png"
     ],
-    videos: [] // Add your video URLs here when you have them
+    videos: [
+      // You can upload videos and add their URLs here
+      // For example: "/lovable-uploads/your-video.mp4"
+    ]
   },
   {
     title: "NEWSLETTER TEMPLATES",
