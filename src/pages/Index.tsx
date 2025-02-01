@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
 import CaseStudy from "@/components/CaseStudy";
 import Contact from "@/components/Contact";
 
@@ -63,7 +62,6 @@ const Index = () => {
     <main className="relative">
       <Navigation />
       <Hero />
-      <About />
       <div id="work">
         {caseStudies.map((study, index) => (
           <CaseStudy
