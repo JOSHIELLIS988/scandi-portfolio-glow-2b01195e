@@ -325,14 +325,15 @@ const CaseStudy = ({
                 Videos
               </span>
               <div className="relative overflow-hidden rounded-2xl glass group">
-                <video
+                <iframe
                   src={videos[currentVideoIndex]}
-                  controls
-                  className="w-full h-full object-contain"
-                  playsInline
-                >
-                  Your browser does not support the video tag.
-                </video>
+                  width="100%"
+                  height="400"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  className="w-full"
+                ></iframe>
                 {videos.length > 1 && (
                   <>
                     <Button
