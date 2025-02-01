@@ -33,7 +33,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6">
+    <section className="min-h-screen flex items-center justify-center px-6 pt-24">
       <div className="text-center max-w-3xl">
         <div 
           ref={avatarRef}
