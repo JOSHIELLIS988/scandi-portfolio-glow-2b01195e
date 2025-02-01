@@ -40,7 +40,7 @@ const Hero = () => {
           className="mb-8 opacity-0 translate-y-4 transition-all duration-700 ease-out"
         >
           <Avatar className="w-32 h-32 mx-auto border-2 border-white/10">
-            <AvatarImage src="/lovable-uploads/27f0f896-8625-478c-96d4-bfa00ebd8fd2.png" alt="Ellis Joshua" />
+            <AvatarImage src="/lovable-uploads/2f32ec6d-f04c-4a85-b79b-bf4f3ab89295.png" alt="Ellis Joshua" />
           </Avatar>
         </div>
         <h1
