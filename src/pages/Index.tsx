@@ -24,7 +24,7 @@ const caseStudies = [
     ]
   },
   {
-    title: "PRODUCT SHOTS",
+    title: "",
     description: "",
     imageUrl: "/lovable-uploads/3d7540c9-4f01-4fe6-b5b4-5b7378c287de.png",
     label: "Project",
@@ -45,7 +45,7 @@ const Index = () => {
       <div id="work">
         {caseStudies.map((study, index) => (
           <CaseStudy
-            key={study.title}
+            key={study.title || index}
             title={study.title}
             description={study.description}
             imageUrl={study.imageUrl}
@@ -53,7 +53,6 @@ const Index = () => {
             label={study.label}
             additionalImages={study.additionalImages}
             socialMediaImages={study.socialMediaImages}
-            videos={study.videos}
           />
         ))}
       </div>
