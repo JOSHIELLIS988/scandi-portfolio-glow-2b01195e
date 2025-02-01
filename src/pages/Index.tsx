@@ -27,7 +27,6 @@ const caseStudies = [
     title: "",
     description: "",
     imageUrl: "/lovable-uploads/3d7540c9-4f01-4fe6-b5b4-5b7378c287de.png",
-    label: "Project",
     additionalImages: [
       "/lovable-uploads/7bb3ffbd-1065-4477-b674-16d93afcb61f.png",
       "/lovable-uploads/14fa1a2b-fe69-40f5-9ad0-5a0b7608157a.png",
