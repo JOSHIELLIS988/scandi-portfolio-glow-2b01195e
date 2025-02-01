@@ -25,11 +25,11 @@ const Packages = () => {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>Three UGC videos with scripting and production - Each video will be created by different creators to provide diverse perspectives and styles, optimized for both website engagement and social media ads performance. Includes professional scripting, filming guidelines, and post-production editing.</span>
+                      <span>Three UGC videos with scripting and production - Each video will be created by different creators to provide diverse perspectives and styles, optimized for both website engagement and social media ads performance.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>Five high-performing still ads - A mix of product-focused visuals, customer testimonials, and awareness-driven content. Each ad is designed with conversion optimization in mind and includes multiple variations for A/B testing.</span>
+                      <span>Five high-performing still ads - A mix of product-focused visuals, customer testimonials, and awareness-driven content.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
@@ -45,7 +45,7 @@ const Packages = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>One blog post with Meta ads carousel - SEO-optimized blog content transformed into an engaging social media carousel. Includes keyword research, professional writing, and design of 4-5 carousel slides.</span>
+                      <span>One blog post with Meta ads carousel - SEO-optimized blog content transformed into an engaging social media carousel.</span>
                     </li>
                   </ul>
                 </div>
@@ -87,11 +87,11 @@ const Packages = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>One photorealistic 3D-rendered product shot - Studio-quality product visualization with customizable background and lighting options. Delivered in multiple formats suitable for all marketing channels.</span>
+                      <span>One photorealistic 3D-rendered product shot - Studio-quality product visualization with customizable background and lighting options.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>10-15 second 3D product animation - Engaging product showcase with professional animation, including storyboard, basic sound design, and delivery in multiple formats for various platforms.</span>
+                      <span>10-15 second 3D product animation - Engaging product showcase with professional animation, including storyboard and basic sound design.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
