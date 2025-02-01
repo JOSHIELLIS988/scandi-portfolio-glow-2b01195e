@@ -66,7 +66,7 @@ const Hero = () => {
           ref={descriptionRef}
           className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto opacity-0 translate-y-4 transition-all duration-700 delay-400 ease-out"
         >
-          My services range from full brand development and conversion-driven content to UGC production, 3D animation films, copywriting, product visuals, and newsletter design. I combine strategy and creativity to craft engaging, high-performing content that drives results across e-commerce platforms.
+          I create conversion-driven content packages for e-commerce brands, covering UGC production, 3D animation films, copywriting, product visuals, and newsletter design. By combining strategy and creativity, I craft engaging, high-performing content that enhances brand presence and drives measurable results across e-commerce platforms.
         </p>
       </div>
     </section>
