@@ -36,6 +36,12 @@ const CaseStudy = ({
   results
 }: CaseStudyProps) => {
   const elementRef = useRef<HTMLDivElement>(null);
+  const productRef = useRef<HTMLDivElement>(null);
+  const socialRef = useRef<HTMLDivElement>(null);
+  const newsletterRef = useRef<HTMLDivElement>(null);
+  const blogRef = useRef<HTMLDivElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
+  
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentSocialIndex, setCurrentSocialIndex] = useState(0);
   const [currentNewsletterIndex, setCurrentNewsletterIndex] = useState(0);
@@ -45,7 +51,13 @@ const CaseStudy = ({
   const socialImages = socialMediaImages ? [...socialMediaImages] : [];
   const newsletters = newsletterImages ? [...newsletterImages] : [];
   const blogs = blogImages ? [...blogImages] : [];
+  
   const [isVisible, setIsVisible] = useState(false);
+  const [isProductVisible, setIsProductVisible] = useState(false);
+  const [isSocialVisible, setIsSocialVisible] = useState(false);
+  const [isNewsletterVisible, setIsNewsletterVisible] = useState(false);
+  const [isBlogVisible, setBlogVisible] = useState(false);
+  const [isResultsVisible, setResultsVisible] = useState(false);
 
   useEffect(() => {
     const observerOptions = {
@@ -56,13 +68,29 @@ const CaseStudy = ({
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          if (entry.target === elementRef.current) setIsVisible(true);
+          if (entry.target === productRef.current) setIsProductVisible(true);
+          if (entry.target === socialRef.current) setIsSocialVisible(true);
+          if (entry.target === newsletterRef.current) setIsNewsletterVisible(true);
+          if (entry.target === blogRef.current) setBlogVisible(true);
+          if (entry.target === resultsRef.current) setResultsVisible(true);
           observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
-    if (elementRef.current) observer.observe(elementRef.current);
+    const elements = [
+      elementRef.current,
+      productRef.current,
+      socialRef.current,
+      newsletterRef.current,
+      blogRef.current,
+      resultsRef.current
+    ].filter(Boolean);
+
+    elements.forEach(element => {
+      if (element) observer.observe(element);
+    });
 
     return () => observer.disconnect();
   }, []);
@@ -154,7 +182,12 @@ const CaseStudy = ({
         </div>
         <div className="lg:w-1/2 space-y-8">
           {additionalImages && (
-            <>
+            <div
+              ref={productRef}
+              className={`opacity-0 scale-95 transition-all duration-1000 ease-out ${
+                isProductVisible ? 'opacity-100 scale-100 animate-zoom-in' : ''
+              }`}
+            >
               <span className="text-xs font-medium text-white uppercase tracking-wider mb-1 block">
                 PRODUCT STILLS
               </span>
@@ -194,11 +227,16 @@ const CaseStudy = ({
                   ))}
                 </div>
               </div>
-            </>
+            </div>
           )}
           
           {socialMediaImages && socialMediaImages.length > 0 && (
-            <>
+            <div
+              ref={socialRef}
+              className={`opacity-0 scale-95 transition-all duration-1000 ease-out ${
+                isSocialVisible ? 'opacity-100 scale-100 animate-zoom-in' : ''
+              }`}
+            >
               <span className="text-xs font-medium text-white uppercase tracking-wider mb-1 block">
                 Social Media Ads
               </span>
@@ -238,11 +276,16 @@ const CaseStudy = ({
                   ))}
                 </div>
               </div>
-            </>
+            </div>
           )}
 
           {newsletterImages && newsletterImages.length > 0 && (
-            <>
+            <div
+              ref={newsletterRef}
+              className={`opacity-0 scale-95 transition-all duration-1000 ease-out ${
+                isNewsletterVisible ? 'opacity-100 scale-100 animate-zoom-in' : ''
+              }`}
+            >
               <span className="text-xs font-medium text-white uppercase tracking-wider mb-1 block">
                 Newsletter Templates
               </span>
@@ -282,11 +325,16 @@ const CaseStudy = ({
                   ))}
                 </div>
               </div>
-            </>
+            </div>
           )}
 
           {blogImages && blogImages.length > 0 && (
-            <>
+            <div
+              ref={blogRef}
+              className={`opacity-0 scale-95 transition-all duration-1000 ease-out ${
+                isBlogVisible ? 'opacity-100 scale-100 animate-zoom-in' : ''
+              }`}
+            >
               <span className="text-xs font-medium text-white uppercase tracking-wider mb-1 block">
                 Blog Posts
               </span>
@@ -326,7 +374,7 @@ const CaseStudy = ({
                   ))}
                 </div>
               </div>
-            </>
+            </div>
           )}
 
           {videos && videos.length > 0 && (
@@ -381,7 +429,12 @@ const CaseStudy = ({
           )}
 
           {results && results.length > 0 && (
-            <>
+            <div
+              ref={resultsRef}
+              className={`opacity-0 scale-95 transition-all duration-1000 ease-out ${
+                isResultsVisible ? 'opacity-100 scale-100 animate-zoom-in' : ''
+              }`}
+            >
               <span className="text-xs font-medium text-white uppercase tracking-wider mb-1 block">
                 Results
               </span>
@@ -393,7 +446,7 @@ const CaseStudy = ({
                   </div>
                 ))}
               </div>
-            </>
+            </div>
           )}
         </div>
       </div>
