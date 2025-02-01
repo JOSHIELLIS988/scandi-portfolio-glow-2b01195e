@@ -112,7 +112,7 @@ const CaseStudy = ({
           {additionalImages && (
             <>
               <span className="text-xs text-white uppercase tracking-wider mb-1 block text-left px-6 md:px-0">
-                Templates
+                NEWSLETTER TEMPLATES
               </span>
               <div className="relative overflow-hidden rounded-none md:rounded-lg glass group">
                 <img
