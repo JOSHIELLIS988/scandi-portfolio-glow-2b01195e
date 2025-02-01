@@ -67,6 +67,11 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
           <p className="text-muted-foreground text-lg">{description}</p>
         </div>
         <div className="lg:w-1/2">
+          {additionalImages && (
+            <span className="text-xs text-muted-foreground uppercase tracking-wider mb-3 block text-left">
+              Product Shots
+            </span>
+          )}
           <div className="relative aspect-[4/3] overflow-hidden rounded-lg glass group">
             <img
               src={images[currentImageIndex]}
