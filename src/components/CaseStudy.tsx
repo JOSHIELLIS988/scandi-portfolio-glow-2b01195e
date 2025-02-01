@@ -12,6 +12,7 @@ interface CaseStudyProps {
   additionalImages?: string[];
   socialMediaImages?: string[];
   newsletterImages?: string[];
+  blogImages?: string[];
   videos?: string[];
 }
 
@@ -24,16 +25,19 @@ const CaseStudy = ({
   additionalImages, 
   socialMediaImages,
   newsletterImages,
+  blogImages,
   videos 
 }: CaseStudyProps) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentSocialIndex, setCurrentSocialIndex] = useState(0);
   const [currentNewsletterIndex, setCurrentNewsletterIndex] = useState(0);
+  const [currentBlogIndex, setCurrentBlogIndex] = useState(0);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const images = additionalImages ? [imageUrl, ...additionalImages] : [imageUrl];
   const socialImages = socialMediaImages ? [...socialMediaImages] : [];
   const newsletters = newsletterImages ? [...newsletterImages] : [];
+  const blogs = blogImages ? [...blogImages] : [];
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -56,7 +60,7 @@ const CaseStudy = ({
     return () => observer.disconnect();
   }, []);
 
-  const nextImage = (type: 'product' | 'social' | 'newsletter') => {
+  const nextImage = (type: 'product' | 'social' | 'newsletter' | 'blog') => {
     switch(type) {
       case 'social':
         setCurrentSocialIndex((prevIndex) => 
@@ -68,6 +72,11 @@ const CaseStudy = ({
           prevIndex === newsletters.length - 1 ? 0 : prevIndex + 1
         );
         break;
+      case 'blog':
+        setCurrentBlogIndex((prevIndex) => 
+          prevIndex === blogs.length - 1 ? 0 : prevIndex + 1
+        );
+        break;
       default:
         setCurrentImageIndex((prevIndex) => 
           prevIndex === images.length - 1 ? 0 : prevIndex + 1
@@ -75,7 +84,7 @@ const CaseStudy = ({
     }
   };
 
-  const previousImage = (type: 'product' | 'social' | 'newsletter') => {
+  const previousImage = (type: 'product' | 'social' | 'newsletter' | 'blog') => {
     switch(type) {
       case 'social':
         setCurrentSocialIndex((prevIndex) => 
@@ -85,6 +94,11 @@ const CaseStudy = ({
       case 'newsletter':
         setCurrentNewsletterIndex((prevIndex) => 
           prevIndex === 0 ? newsletters.length - 1 : prevIndex - 1
+        );
+        break;
+      case 'blog':
+        setCurrentBlogIndex((prevIndex) => 
+          prevIndex === 0 ? blogs.length - 1 : prevIndex - 1
         );
         break;
       default:
@@ -253,6 +267,50 @@ const CaseStudy = ({
                       key={i}
                       className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 ${
                         i === currentNewsletterIndex ? 'bg-white' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
+
+          {blogImages && blogImages.length > 0 && (
+            <>
+              <span className="text-xs font-medium text-white uppercase tracking-wider mb-1 block">
+                Blog Posts
+              </span>
+              <div className="relative overflow-hidden rounded-2xl glass group">
+                <img
+                  src={blogs[currentBlogIndex]}
+                  alt={`${title} blog post`}
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
+                  onClick={() => previousImage('blog')}
+                  aria-label="Previous blog post"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
+                  onClick={() => nextImage('blog')}
+                  aria-label="Next blog post"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                  {blogs.map((_, i) => (
+                    <div
+                      key={i}
+                      className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 ${
+                        i === currentBlogIndex ? 'bg-white' : 'bg-white/50'
                       }`}
                     />
                   ))}
