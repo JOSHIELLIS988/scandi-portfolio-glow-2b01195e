@@ -41,8 +41,11 @@ const caseStudies = [
       "/lovable-uploads/99227319-1243-476c-8d0d-76798c239837.png"
     ],
     videos: [
-      "https://player.vimeo.com/video/1033832323",
-      "https://player.vimeo.com/video/1033837492"
+      "https://player.vimeo.com/video/1052606449",
+      "https://player.vimeo.com/video/1052606856",
+      "https://player.vimeo.com/video/1052607193",
+      "https://player.vimeo.com/video/1052607433",
+      "https://player.vimeo.com/video/1052607642"
     ]
   }
 ];
