@@ -21,10 +21,18 @@ const caseStudies = [
       "/lovable-uploads/460506f7-2a64-4241-aefd-a416475f93be.png",
       "/lovable-uploads/18a6535f-0859-4414-8461-3dca1edcbc4d.png",
       "/lovable-uploads/99ec765a-b4fd-4daa-8d8d-71214fdb084b.png"
-    ],
-    videos: [
-      // Upload your videos and add their URLs here
-      // Supported formats: .mp4, .webm, .ogg
+    ]
+  },
+  {
+    title: "Newsletter Templates",
+    description: "A series of email marketing templates designed to engage customers throughout their journey. From welcome messages to follow-ups and promotional campaigns, each template is crafted to maintain brand consistency while delivering targeted messaging.",
+    imageUrl: "/lovable-uploads/3d7540c9-4f01-4fe6-b5b4-5b7378c287de.png",
+    label: "Project",
+    additionalImages: [
+      "/lovable-uploads/7bb3ffbd-1065-4477-b674-16d93afcb61f.png",
+      "/lovable-uploads/14fa1a2b-fe69-40f5-9ad0-5a0b7608157a.png",
+      "/lovable-uploads/09f0cb8e-33a8-404e-96e0-f1301adf65a6.png",
+      "/lovable-uploads/268ffa7d-96a9-40b8-b4c7-26daa8416a9f.png"
     ]
   }
 ];
