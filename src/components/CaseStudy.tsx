@@ -148,6 +148,9 @@ const CaseStudy = ({
         <div className="lg:w-1/2 space-y-8">
           {additionalImages && (
             <>
+              <span className="text-xs font-medium text-white uppercase tracking-wider mb-1 block">
+                PRODUCT STILLS
+              </span>
               <div className="relative overflow-hidden rounded-2xl glass group">
                 <img
                   src={images[currentImageIndex]}
