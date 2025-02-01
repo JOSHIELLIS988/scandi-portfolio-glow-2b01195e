@@ -98,20 +98,20 @@ const CaseStudy = ({
       } ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
     >
       <div className="container mx-auto lg:flex items-start gap-16 px-6 md:px-8">
-        <div className="lg:w-1/2 mb-12 lg:mb-0 lg:sticky lg:top-32">
+        <div className="lg:w-1/2 mb-16 lg:mb-0 lg:sticky lg:top-32">
           {label && (
             <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4 block">
               {label}
             </span>
           )}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 tracking-tight">
             {title}
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-2xl">
             {description}
           </p>
         </div>
-        <div className="lg:w-1/2 space-y-8">
+        <div className="lg:w-1/2 space-y-16">
           {additionalImages && (
             <div ref={productRef}>
               <ProductStills 
