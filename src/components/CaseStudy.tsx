@@ -41,7 +41,7 @@ const CaseStudy = ({ title, description, imageUrl, index, label }: CaseStudyProp
       <div className="container mx-auto lg:flex items-center gap-12">
         <div className="lg:w-1/2 mb-8 lg:mb-0">
           {label && (
-            <span className="text-sm text-muted-foreground uppercase tracking-wider mb-2 block">
+            <span className="text-xs text-muted-foreground uppercase tracking-wider mb-1 block">
               {label}
             </span>
           )}
