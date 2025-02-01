@@ -24,8 +24,8 @@ const caseStudies = [
     ]
   },
   {
-    title: "Newsletter Templates",
-    description: "Custom-designed HTML email templates optimized for all major email clients. Built with a modular approach for maximum flexibility and easy customization, while maintaining brand consistency across all communications.",
+    title: "NEWSLETTER TEMPLATES",
+    description: "",
     imageUrl: "/lovable-uploads/c5f5e1be-358b-4279-af04-055c1c5aa70d.png",
     label: "Email Design",
     additionalImages: [
