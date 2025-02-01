@@ -49,13 +49,6 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
     );
   };
 
-  useEffect(() => {
-    if (additionalImages) {
-      const interval = setInterval(nextImage, 3000);
-      return () => clearInterval(interval);
-    }
-  }, [additionalImages, images.length]);
-
   return (
     <div
       ref={elementRef}
