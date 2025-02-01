@@ -13,11 +13,7 @@ const caseStudies = [
       "/lovable-uploads/bda14766-56b8-4dbb-a1eb-467c9c6fbfcf.png",
       "/lovable-uploads/f176f5a4-90c6-4847-9b91-922cff6c943d.png",
       "/lovable-uploads/1ef5d7c0-df63-41bb-89d5-eeac6dbe4133.png",
-      "/lovable-uploads/3d7540c9-4f01-4fe6-b5b4-5b7378c287de.png",
-      "/lovable-uploads/7bb3ffbd-1065-4477-b674-16d93afcb61f.png",
-      "/lovable-uploads/14fa1a2b-fe69-40f5-9ad0-5a0b7608157a.png",
-      "/lovable-uploads/09f0cb8e-33a8-404e-96e0-f1301adf65a6.png",
-      "/lovable-uploads/268ffa7d-96a9-40b8-b4c7-26daa8416a9f.png"
+      "/lovable-uploads/3d7540c9-4f01-4fe6-b5b4-5b7378c287de.png"
     ],
     socialMediaImages: [
       "/lovable-uploads/96743e08-2878-4a6d-9d14-3f1f3803e915.png",
