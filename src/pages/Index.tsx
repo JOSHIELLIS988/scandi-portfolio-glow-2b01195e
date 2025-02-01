@@ -39,6 +39,10 @@ const caseStudies = [
       "/lovable-uploads/aa93db8d-0a55-4e57-acee-62d0f9f53d7a.png",
       "/lovable-uploads/b52e83a3-c418-4399-b494-3a61e0428731.png",
       "/lovable-uploads/99227319-1243-476c-8d0d-76798c239837.png"
+    ],
+    videos: [
+      "https://vimeo.com/manage/videos/1033832323",
+      "https://vimeo.com/manage/videos/1033837492"
     ]
   }
 ];
@@ -61,6 +65,7 @@ const Index = () => {
             socialMediaImages={study.socialMediaImages}
             newsletterImages={study.newsletterImages}
             blogImages={study.blogImages}
+            videos={study.videos}
           />
         ))}
       </div>
