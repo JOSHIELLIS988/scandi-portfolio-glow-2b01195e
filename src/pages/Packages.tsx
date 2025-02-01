@@ -25,27 +25,27 @@ const Packages = () => {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>Three UGC videos with scripting and production</span>
+                      <span>Three UGC videos with scripting and production - Each video will be created by different creators to provide diverse perspectives and styles, optimized for both website engagement and social media ads performance. Includes professional scripting, filming guidelines, and post-production editing.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>Five high-performing still ads</span>
+                      <span>Five high-performing still ads - A mix of product-focused visuals, customer testimonials, and awareness-driven content. Each ad is designed with conversion optimization in mind and includes multiple variations for A/B testing.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>Three photorealistic 3D-rendered product shots</span>
+                      <span>Three photorealistic 3D-rendered product shots - Studio-quality product visualization from multiple angles, with customizable backgrounds and lighting setups. Perfect for e-commerce, marketing materials, and social media.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>20-second high-quality 3D animation</span>
+                      <span>20-second high-quality 3D animation - Professional product showcase animation with dynamic camera movements, custom environments, and branded elements. Includes storyboarding, animation, and sound design.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>Three custom newsletter templates</span>
+                      <span>Three custom newsletter templates - Professionally designed and tested email templates for welcome series, post-purchase flows, or promotional campaigns. Includes mobile-responsive design and integration support.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>One blog post with Meta ads carousel</span>
+                      <span>One blog post with Meta ads carousel - SEO-optimized blog content transformed into an engaging social media carousel. Includes keyword research, professional writing, and design of 4-5 carousel slides.</span>
                     </li>
                   </ul>
                 </div>
@@ -79,23 +79,23 @@ const Packages = () => {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>One UGC video with scripting and production</span>
+                      <span>One UGC video with scripting and production - A professionally crafted user-generated content video with complete scripting, filming guidelines, and post-production. Optimized for both website and social media performance.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>Two high-performing still ads</span>
+                      <span>Two high-performing still ads - Strategic mix of product-focused and social proof content. Each ad includes multiple format variations and is optimized for conversion across different platforms.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>One photorealistic 3D-rendered product shot</span>
+                      <span>One photorealistic 3D-rendered product shot - Studio-quality product visualization with customizable background and lighting options. Delivered in multiple formats suitable for all marketing channels.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>10-15 second 3D product animation</span>
+                      <span>10-15 second 3D product animation - Engaging product showcase with professional animation, including storyboard, basic sound design, and delivery in multiple formats for various platforms.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
-                      <span>One custom newsletter template</span>
+                      <span>One custom newsletter template - Mobile-responsive email template designed for your choice of welcome series, post-purchase flow, or promotional campaigns. Includes integration guidance and best practices.</span>
                     </li>
                   </ul>
                 </div>
