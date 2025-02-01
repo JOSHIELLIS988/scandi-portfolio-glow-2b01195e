@@ -69,6 +69,8 @@ const CaseStudy = ({ title, description, imageUrl, index, label, websiteUrl }: C
                   title={`${title} website`}
                   className="w-full h-[200vh]"
                   loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
                 />
               </ScrollArea>
             ) : (
