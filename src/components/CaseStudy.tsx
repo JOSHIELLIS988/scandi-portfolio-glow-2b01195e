@@ -30,17 +30,18 @@ const CaseStudy = ({
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const images = additionalImages ? [imageUrl, ...additionalImages] : [imageUrl];
   const socialImages = socialMediaImages ? [...socialMediaImages] : [];
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: "50px",
+      rootMargin: "0px",
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("opacity-100", "translate-y-0");
+          setIsVisible(true);
           observer.unobserve(entry.target);
         }
       });
@@ -94,27 +95,31 @@ const CaseStudy = ({
   return (
     <div
       ref={elementRef}
-      className={`min-h-screen flex items-center justify-center p-0 md:p-6 opacity-0 translate-y-8 transition-all duration-1000 ease-out ${
-        index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-      }`}
+      className={`min-h-screen flex items-center justify-center py-24 md:py-32 opacity-0 translate-y-8 transition-all duration-1000 ease-out ${
+        isVisible ? 'opacity-100 translate-y-0' : ''
+      } ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
     >
-      <div className="container mx-auto lg:flex items-start gap-12 px-0 md:px-8">
-        <div className="lg:w-1/2 mb-8 lg:mb-0 px-6 md:px-4 lg:sticky lg:top-24">
+      <div className="container mx-auto lg:flex items-start gap-16 px-6 md:px-8">
+        <div className="lg:w-1/2 mb-12 lg:mb-0 lg:sticky lg:top-32">
           {label && (
-            <span className="text-xs text-muted-foreground uppercase tracking-wider mb-1 block">
+            <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4 block">
               {label}
             </span>
           )}
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-          <p className="text-muted-foreground text-lg">{description}</p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+            {title}
+          </h2>
+          <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-2xl">
+            {description}
+          </p>
         </div>
-        <div className="lg:w-1/2 -mx-0 md:-mx-0 space-y-4">
+        <div className="lg:w-1/2 space-y-8">
           {additionalImages && (
             <>
-              <span className="text-xs text-white uppercase tracking-wider mb-1 block text-left px-6 md:px-0">
+              <span className="text-xs font-medium text-white uppercase tracking-wider mb-1 block">
                 Templates
               </span>
-              <div className="relative overflow-hidden rounded-none md:rounded-lg glass group">
+              <div className="relative overflow-hidden rounded-2xl glass group">
                 <img
                   src={images[currentImageIndex]}
                   alt={title}
@@ -124,7 +129,7 @@ const CaseStudy = ({
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
                   onClick={() => previousImage(false)}
                   aria-label="Previous image"
                 >
@@ -133,13 +138,13 @@ const CaseStudy = ({
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
                   onClick={() => nextImage(false)}
                   aria-label="Next image"
                 >
                   <ChevronRight className="h-4 w-4" />
                 </Button>
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                   {images.map((_, i) => (
                     <div
                       key={i}
@@ -153,12 +158,12 @@ const CaseStudy = ({
             </>
           )}
           
-          {socialMediaImages && (
+          {socialMediaImages && socialMediaImages.length > 0 && (
             <>
-              <span className="text-xs text-white uppercase tracking-wider mb-1 block text-left px-6 md:px-0">
+              <span className="text-xs font-medium text-white uppercase tracking-wider mb-1 block">
                 Social Media Ads
               </span>
-              <div className="relative aspect-square overflow-hidden rounded-none md:rounded-lg glass group">
+              <div className="relative aspect-square overflow-hidden rounded-2xl glass group">
                 <img
                   src={socialImages[currentSocialIndex]}
                   alt={`${title} social media ad`}
@@ -168,7 +173,7 @@ const CaseStudy = ({
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
                   onClick={() => previousImage(true)}
                   aria-label="Previous social media ad"
                 >
@@ -177,13 +182,13 @@ const CaseStudy = ({
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
                   onClick={() => nextImage(true)}
                   aria-label="Next social media ad"
                 >
                   <ChevronRight className="h-4 w-4" />
                 </Button>
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                   {socialImages.map((_, i) => (
                     <div
                       key={i}
@@ -199,10 +204,10 @@ const CaseStudy = ({
 
           {videos && videos.length > 0 && (
             <>
-              <span className="text-xs text-white uppercase tracking-wider mb-1 block text-left px-6 md:px-0">
+              <span className="text-xs font-medium text-white uppercase tracking-wider mb-1 block">
                 Videos
               </span>
-              <div className="relative overflow-hidden rounded-none md:rounded-lg glass group">
+              <div className="relative overflow-hidden rounded-2xl glass group">
                 <video
                   src={videos[currentVideoIndex]}
                   controls
@@ -216,7 +221,7 @@ const CaseStudy = ({
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="absolute left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
+                      className="absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
                       onClick={previousVideo}
                       aria-label="Previous video"
                     >
@@ -225,13 +230,13 @@ const CaseStudy = ({
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
                       onClick={nextVideo}
                       aria-label="Next video"
                     >
                       <ChevronRight className="h-4 w-4" />
                     </Button>
-                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                       {videos.map((_, i) => (
                         <div
                           key={i}
