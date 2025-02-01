@@ -24,15 +24,9 @@ const caseStudies = [
     ]
   },
   {
-    title: "Newsletter Templates",
-    description: "Custom-designed HTML email templates optimized for all major email clients. Built with a modular approach for maximum flexibility and easy customization, while maintaining brand consistency across all communications.",
-    imageUrl: "/lovable-uploads/2c060979-dbeb-498d-a701-54193a6d8896.png",
-    label: "Email Design",
-    additionalImages: [
-      "/lovable-uploads/27f0f896-8625-478c-96d4-bfa00ebd8fd2.png",
-      "/lovable-uploads/3ee7dbd0-05ad-4a1a-8353-97dde55bc88e.png",
-      "/lovable-uploads/6e50ab41-4305-4bbf-9007-0229fb442b4e.png"
-    ]
+    title: "Project Two",
+    description: "Strategic content creation and visual storytelling that helped establish a strong brand presence across multiple digital platforms.",
+    imageUrl: "/placeholder.svg",
   },
   {
     title: "Project Three",
