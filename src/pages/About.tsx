@@ -47,7 +47,7 @@ const About = () => {
               ref={textRef2}
               className="text-base md:text-lg text-muted-foreground leading-relaxed opacity-0 translate-y-4 transition-all duration-700 delay-200 ease-out"
             >
-              I spent 7 years at AKQA, the world's most awarded digital agency, working across Nike, Nike Football, and Gatorade. During that time, I honed my skills in brand storytelling, digital experiences, and performance-driven content - learning how to connect brands with their audience in a way that drives engagement and results.
+              I spent 7 years at AKQA, the world's most awarded digital agency, working across Nivea, Nike Football, H&M and Gatorade. During that time, I honed my skills in brand storytelling, digital experiences, and performance-driven content - learning how to connect brands with their audience in a way that drives engagement and results.
             </p>
             <p
               ref={textRef3}
@@ -59,7 +59,7 @@ const About = () => {
               ref={textRef4}
               className="text-base md:text-lg text-muted-foreground leading-relaxed opacity-0 translate-y-4 transition-all duration-700 delay-400 ease-out"
             >
-              Let's create something great together. 🚀
+              Let's create something great together.
             </p>
           </div>
         </div>
