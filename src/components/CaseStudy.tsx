@@ -134,8 +134,8 @@ const CaseStudy = ({
   return (
     <div
       ref={elementRef}
-      className={`min-h-screen flex items-center justify-center py-24 md:py-32 opacity-0 translate-y-8 transition-all duration-1000 ease-out ${
-        isVisible ? 'opacity-100 translate-y-0' : ''
+      className={`min-h-screen flex items-center justify-center py-24 md:py-32 opacity-0 scale-95 transition-all duration-1000 ease-out ${
+        isVisible ? 'opacity-100 scale-100 animate-zoom-in' : ''
       } ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
     >
       <div className="container mx-auto lg:flex items-start gap-16 px-6 md:px-8">
@@ -402,4 +402,3 @@ const CaseStudy = ({
 };
 
 export default CaseStudy;
-
