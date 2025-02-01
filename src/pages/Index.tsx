@@ -47,7 +47,7 @@ const caseStudies = [
     results: [
       {
         value: "+6%",
-        label: "Avg Conversion Rate on website"
+        label: "Avg Conversion Rate on Shopify store"
       },
       {
         value: "+320%",
