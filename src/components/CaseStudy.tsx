@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ScrollArea } from "./ui/scroll-area";
 
 interface CaseStudyProps {
@@ -7,11 +7,13 @@ interface CaseStudyProps {
   imageUrl: string;
   index: number;
   label?: string;
-  websiteUrl?: string;
+  additionalImages?: string[];
 }
 
-const CaseStudy = ({ title, description, imageUrl, index, label, websiteUrl }: CaseStudyProps) => {
+const CaseStudy = ({ title, description, imageUrl, index, label, additionalImages }: CaseStudyProps) => {
   const elementRef = useRef<HTMLDivElement>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = additionalImages ? [imageUrl, ...additionalImages] : [imageUrl];
 
   useEffect(() => {
     const observerOptions = {
@@ -33,6 +35,18 @@ const CaseStudy = ({ title, description, imageUrl, index, label, websiteUrl }: C
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (additionalImages) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => 
+          prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 3000);
+
+      return () => clearInterval(interval);
+    }
+  }, [additionalImages, images.length]);
+
   return (
     <div
       ref={elementRef}
@@ -49,38 +63,15 @@ const CaseStudy = ({ title, description, imageUrl, index, label, websiteUrl }: C
           )}
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
           <p className="text-muted-foreground text-lg">{description}</p>
-          {websiteUrl && (
-            <a 
-              href={websiteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-white transition-colors mt-2 block"
-            >
-              {websiteUrl}
-            </a>
-          )}
         </div>
         <div className="lg:w-1/2">
           <div className="relative aspect-video overflow-hidden rounded-lg glass">
-            {websiteUrl ? (
-              <ScrollArea className="h-full">
-                <iframe
-                  src={websiteUrl}
-                  title={`${title} website`}
-                  className="w-full h-[200vh]"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-                />
-              </ScrollArea>
-            ) : (
-              <img
-                src={imageUrl}
-                alt={title}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            )}
+            <img
+              src={images[currentImageIndex]}
+              alt={title}
+              className="w-full h-full object-cover transition-opacity duration-500"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
