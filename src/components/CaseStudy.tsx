@@ -74,11 +74,11 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
           <p className="text-muted-foreground text-lg">{description}</p>
         </div>
         <div className="lg:w-1/2">
-          <div className="relative aspect-[16/10] overflow-hidden rounded-lg glass group">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg glass group">
             <img
               src={images[currentImageIndex]}
               alt={title}
-              className="w-full h-full object-contain transition-opacity duration-500"
+              className="w-full h-full object-cover transition-opacity duration-500"
               loading="lazy"
             />
             {additionalImages && (
