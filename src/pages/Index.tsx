@@ -24,8 +24,8 @@ const caseStudies = [
     ]
   },
   {
-    title: "Newsletter Templates",
-    description: "A series of email marketing templates designed to engage customers throughout their journey. From welcome messages to follow-ups and promotional campaigns, each template is crafted to maintain brand consistency while delivering targeted messaging.",
+    title: "PRODUCT SHOTS",
+    description: "",
     imageUrl: "/lovable-uploads/3d7540c9-4f01-4fe6-b5b4-5b7378c287de.png",
     label: "Project",
     additionalImages: [
