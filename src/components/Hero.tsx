@@ -39,7 +39,7 @@ const Hero = () => {
           ref={avatarRef}
           className="mb-8 opacity-0 translate-y-4 transition-all duration-700 ease-out"
         >
-          <Avatar className="w-24 h-24 mx-auto border-2 border-white/10">
+          <Avatar className="w-32 h-32 mx-auto border-2 border-white/10">
             <AvatarImage src="/lovable-uploads/27f0f896-8625-478c-96d4-bfa00ebd8fd2.png" alt="Ellis Joshua" />
           </Avatar>
         </div>
