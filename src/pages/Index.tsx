@@ -27,7 +27,6 @@ const caseStudies = [
     title: "NEWSLETTER TEMPLATES",
     description: "",
     imageUrl: "/lovable-uploads/c5f5e1be-358b-4279-af04-055c1c5aa70d.png",
-    label: "Email Design",
     additionalImages: [
       "/lovable-uploads/47d44f5c-b01b-421d-a911-711ef234078a.png",
       "/lovable-uploads/46947cbb-7837-437d-b5c2-b07ca3e7f186.png",
