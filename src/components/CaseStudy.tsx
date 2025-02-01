@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ScrollArea } from "./ui/scroll-area";
+import { Button } from "./ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CaseStudyProps {
   title: string;
@@ -35,14 +37,21 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
     return () => observer.disconnect();
   }, []);
 
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const previousImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
   useEffect(() => {
     if (additionalImages) {
-      const interval = setInterval(() => {
-        setCurrentImageIndex((prevIndex) => 
-          prevIndex === images.length - 1 ? 0 : prevIndex + 1
-        );
-      }, 3000);
-
+      const interval = setInterval(nextImage, 3000);
       return () => clearInterval(interval);
     }
   }, [additionalImages, images.length]);
@@ -65,13 +74,45 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
           <p className="text-muted-foreground text-lg">{description}</p>
         </div>
         <div className="lg:w-1/2">
-          <div className="relative aspect-video overflow-hidden rounded-lg glass">
+          <div className="relative aspect-[16/10] overflow-hidden rounded-lg glass group">
             <img
               src={images[currentImageIndex]}
               alt={title}
-              className="w-full h-full object-cover transition-opacity duration-500"
+              className="w-full h-full object-contain transition-opacity duration-500"
               loading="lazy"
             />
+            {additionalImages && (
+              <>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
+                  onClick={previousImage}
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
+                  onClick={nextImage}
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                  {images.map((_, i) => (
+                    <div
+                      key={i}
+                      className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 ${
+                        i === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
