@@ -11,12 +11,23 @@ interface CaseStudyProps {
   label?: string;
   additionalImages?: string[];
   socialMediaImages?: string[];
+  videos?: string[];
 }
 
-const CaseStudy = ({ title, description, imageUrl, index, label, additionalImages, socialMediaImages }: CaseStudyProps) => {
+const CaseStudy = ({ 
+  title, 
+  description, 
+  imageUrl, 
+  index, 
+  label, 
+  additionalImages, 
+  socialMediaImages,
+  videos 
+}: CaseStudyProps) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentSocialIndex, setCurrentSocialIndex] = useState(0);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const images = additionalImages ? [imageUrl, ...additionalImages] : [imageUrl];
   const socialImages = socialMediaImages ? [...socialMediaImages] : [];
 
@@ -60,6 +71,22 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
     } else {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
+    }
+  };
+
+  const nextVideo = () => {
+    if (videos) {
+      setCurrentVideoIndex((prevIndex) => 
+        prevIndex === videos.length - 1 ? 0 : prevIndex + 1
+      );
+    }
+  };
+
+  const previousVideo = () => {
+    if (videos) {
+      setCurrentVideoIndex((prevIndex) => 
+        prevIndex === 0 ? videos.length - 1 : prevIndex - 1
       );
     }
   };
@@ -166,6 +193,56 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
                     />
                   ))}
                 </div>
+              </div>
+            </>
+          )}
+
+          {videos && videos.length > 0 && (
+            <>
+              <span className="text-xs text-white uppercase tracking-wider mb-1 block text-left px-6 md:px-0">
+                Videos
+              </span>
+              <div className="relative overflow-hidden rounded-none md:rounded-lg glass group">
+                <video
+                  src={videos[currentVideoIndex]}
+                  controls
+                  className="w-full h-full object-contain"
+                  playsInline
+                >
+                  Your browser does not support the video tag.
+                </video>
+                {videos.length > 1 && (
+                  <>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="absolute left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
+                      onClick={previousVideo}
+                      aria-label="Previous video"
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-background/50 hover:bg-background/80"
+                      onClick={nextVideo}
+                      aria-label="Next video"
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </Button>
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                      {videos.map((_, i) => (
+                        <div
+                          key={i}
+                          className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 ${
+                            i === currentVideoIndex ? 'bg-white' : 'bg-white/50'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
             </>
           )}
