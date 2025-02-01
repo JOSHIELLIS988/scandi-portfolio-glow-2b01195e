@@ -16,8 +16,7 @@ const caseStudies = [
     ],
     socialMediaImages: [
       "/lovable-uploads/2c060979-dbeb-498d-a701-54193a6d8896.png",
-      "/lovable-uploads/3ee7dbd0-05ad-4a1a-8353-97dde55bc88e.png",
-      "/lovable-uploads/a20bcc5a-e33c-4f55-87a1-5e242c9e89dc.png"
+      "/lovable-uploads/3ee7dbd0-05ad-4a1a-8353-97dde55bc88e.png"
     ]
   },
   {
