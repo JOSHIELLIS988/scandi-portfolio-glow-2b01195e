@@ -86,7 +86,7 @@ export default {
         "zoom-in": {
           "0%": { 
             opacity: "0",
-            transform: "scale(0.95) translateY(10px)"
+            transform: "scale(0.98) translateY(10px)"
           },
           "100%": {
             opacity: "1",
@@ -101,7 +101,7 @@ export default {
         "fade-out": "fade-out 0.5s ease-out",
         "slide-in": "slide-in 0.3s ease-out",
         float: "float 3s ease-in-out infinite",
-        "zoom-in": "zoom-in 1s cubic-bezier(0.16, 1, 0.3, 1)",
+        "zoom-in": "zoom-in 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
       },
     },
   },
