@@ -23,8 +23,8 @@ const Videos = ({ videos }: VideosProps) => {
 
   return (
     <>
-      <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1 block">
-        UGC Videos
+      <span className="text-xs font-medium uppercase tracking-wider mb-4 block">
+        UGC VIDEOS
       </span>
       <div className="relative overflow-hidden rounded-2xl glass group">
         <iframe
