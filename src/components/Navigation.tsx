@@ -21,7 +21,7 @@ const Navigation = () => {
           </button>
 
           <div className="hidden lg:flex items-center space-x-8">
-            <a href="#work" className="hover:opacity-80 transition-opacity">Work</a>
+            <Link to="/" className="hover:opacity-80 transition-opacity">Work</Link>
             <Link to="/about" className="hover:opacity-80 transition-opacity">About</Link>
             <a href="#contact" className="hover:opacity-80 transition-opacity">Contact</a>
           </div>
@@ -30,13 +30,13 @@ const Navigation = () => {
         {isOpen && (
           <div className="lg:hidden pt-4 pb-2 animate-fade-in">
             <div className="flex flex-col space-y-4">
-              <a
-                href="#work"
+              <Link
+                to="/"
                 className="hover:opacity-80 transition-opacity"
                 onClick={() => setIsOpen(false)}
               >
                 Work
-              </a>
+              </Link>
               <Link
                 to="/about"
                 className="hover:opacity-80 transition-opacity"
