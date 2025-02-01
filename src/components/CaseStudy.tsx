@@ -3,6 +3,11 @@ import { ScrollArea } from "./ui/scroll-area";
 import { Button } from "./ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+interface Result {
+  value: string;
+  label: string;
+}
+
 interface CaseStudyProps {
   title: string;
   description: string;
@@ -14,6 +19,7 @@ interface CaseStudyProps {
   newsletterImages?: string[];
   blogImages?: string[];
   videos?: string[];
+  results?: Result[];
 }
 
 const CaseStudy = ({ 
@@ -26,7 +32,8 @@ const CaseStudy = ({
   socialMediaImages,
   newsletterImages,
   blogImages,
-  videos 
+  videos,
+  results
 }: CaseStudyProps) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -369,6 +376,22 @@ const CaseStudy = ({
                     </div>
                   </>
                 )}
+              </div>
+            </>
+          )}
+
+          {results && results.length > 0 && (
+            <>
+              <span className="text-xs font-medium text-white uppercase tracking-wider mb-1 block">
+                Results
+              </span>
+              <div className="grid grid-cols-2 gap-8">
+                {results.map((result, i) => (
+                  <div key={i} className="glass p-8 rounded-2xl">
+                    <h3 className="text-4xl md:text-5xl font-bold mb-2">{result.value}</h3>
+                    <p className="text-sm text-muted-foreground">{result.label}</p>
+                  </div>
+                ))}
               </div>
             </>
           )}

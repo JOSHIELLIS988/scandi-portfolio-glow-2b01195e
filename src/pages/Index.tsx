@@ -43,6 +43,16 @@ const caseStudies = [
       "https://player.vimeo.com/video/1052607193",
       "https://player.vimeo.com/video/1052607433",
       "https://player.vimeo.com/video/1052607642"
+    ],
+    results: [
+      {
+        value: "+6%",
+        label: "Avg Conversion Rate on website"
+      },
+      {
+        value: "+320%",
+        label: "Avg ROAS return on Meta"
+      }
     ]
   }
 ];
@@ -66,6 +76,7 @@ const Index = () => {
             newsletterImages={study.newsletterImages}
             blogImages={study.blogImages}
             videos={study.videos}
+            results={study.results}
           />
         ))}
       </div>
