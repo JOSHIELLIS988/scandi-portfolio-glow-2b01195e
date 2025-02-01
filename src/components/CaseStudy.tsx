@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { ScrollArea } from "./ui/scroll-area";
 
 interface CaseStudyProps {
   title: string;
@@ -6,9 +7,10 @@ interface CaseStudyProps {
   imageUrl: string;
   index: number;
   label?: string;
+  websiteUrl?: string;
 }
 
-const CaseStudy = ({ title, description, imageUrl, index, label }: CaseStudyProps) => {
+const CaseStudy = ({ title, description, imageUrl, index, label, websiteUrl }: CaseStudyProps) => {
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -47,15 +49,36 @@ const CaseStudy = ({ title, description, imageUrl, index, label }: CaseStudyProp
           )}
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
           <p className="text-muted-foreground text-lg">{description}</p>
+          {websiteUrl && (
+            <a 
+              href={websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-white transition-colors mt-2 block"
+            >
+              {websiteUrl}
+            </a>
+          )}
         </div>
         <div className="lg:w-1/2">
           <div className="relative aspect-video overflow-hidden rounded-lg glass">
-            <img
-              src={imageUrl}
-              alt={title}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+            {websiteUrl ? (
+              <ScrollArea className="h-full">
+                <iframe
+                  src={websiteUrl}
+                  title={`${title} website`}
+                  className="w-full h-[200vh]"
+                  loading="lazy"
+                />
+              </ScrollArea>
+            ) : (
+              <img
+                src={imageUrl}
+                alt={title}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            )}
           </div>
         </div>
       </div>

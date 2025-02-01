@@ -9,6 +9,7 @@ const caseStudies = [
     description: "A comprehensive brand identity built from scratch, including e-commerce content strategy, product visuals, 3D animation films, website design & storytelling, newsletter templates, UGC scriptwriting & production, social media ads, and blog articles.",
     imageUrl: "/placeholder.svg",
     label: "Client",
+    websiteUrl: "https://www.getgasper.com"
   },
   {
     title: "Project Two",
@@ -36,6 +37,7 @@ const Index = () => {
             imageUrl={study.imageUrl}
             index={index}
             label={study.label}
+            websiteUrl={study.websiteUrl}
           />
         ))}
       </div>
