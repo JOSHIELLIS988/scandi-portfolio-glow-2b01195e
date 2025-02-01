@@ -11,8 +11,8 @@ interface ResultsProps {
 const Results = ({ results, isVisible }: ResultsProps) => {
   return (
     <div
-      className={`opacity-0 scale-95 transition-all duration-1000 ease-out ${
-        isVisible ? 'opacity-100 scale-100 animate-zoom-in' : ''
+      className={`opacity-0 transition-opacity duration-500 ease-out ${
+        isVisible ? 'opacity-100' : ''
       }`}
     >
       <span className="text-xs font-medium text-white uppercase tracking-wider mb-1 block">
