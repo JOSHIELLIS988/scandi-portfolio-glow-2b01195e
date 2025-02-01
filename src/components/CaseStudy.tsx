@@ -18,7 +18,7 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentSocialIndex, setCurrentSocialIndex] = useState(0);
   const images = additionalImages ? [imageUrl, ...additionalImages] : [imageUrl];
-  const socialImages = socialMediaImages ? [imageUrl, ...socialMediaImages] : [];
+  const socialImages = socialMediaImages ? [...socialMediaImages] : [];
 
   useEffect(() => {
     const observerOptions = {
@@ -81,10 +81,10 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
           <p className="text-muted-foreground text-lg">{description}</p>
         </div>
-        <div className="lg:w-1/2 -mx-0 md:-mx-0 space-y-8">
+        <div className="lg:w-1/2 -mx-0 md:-mx-0 space-y-4">
           {additionalImages && (
             <>
-              <span className="text-xs text-muted-foreground uppercase tracking-wider mb-3 block text-left px-6 md:px-0">
+              <span className="text-xs text-white uppercase tracking-wider mb-1 block text-left px-6 md:px-0">
                 Product Shots
               </span>
               <div className="relative aspect-[4/3] overflow-hidden rounded-none md:rounded-lg glass group">
@@ -128,7 +128,7 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
           
           {socialMediaImages && (
             <>
-              <span className="text-xs text-muted-foreground uppercase tracking-wider mb-3 block text-left px-6 md:px-0">
+              <span className="text-xs text-white uppercase tracking-wider mb-1 block text-left px-6 md:px-0">
                 Social Media Ads
               </span>
               <div className="relative aspect-square overflow-hidden rounded-none md:rounded-lg glass group">
