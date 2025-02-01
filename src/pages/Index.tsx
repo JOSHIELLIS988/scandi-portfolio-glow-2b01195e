@@ -6,8 +6,9 @@ import Contact from "@/components/Contact";
 const caseStudies = [
   {
     title: "Gäsper",
-    description: "A comprehensive brand identity and e-commerce content strategy that resulted in a 200% increase in engagement and a 150% boost in conversion rates.",
+    description: "A comprehensive brand identity built from scratch, including e-commerce content strategy, product visuals, 3D animation films, website design & storytelling, newsletter templates, UGC scriptwriting & production, social media ads, and blog articles.",
     imageUrl: "/placeholder.svg",
+    label: "Client",
   },
   {
     title: "Project Two",
@@ -34,6 +35,7 @@ const Index = () => {
             description={study.description}
             imageUrl={study.imageUrl}
             index={index}
+            label={study.label}
           />
         ))}
       </div>

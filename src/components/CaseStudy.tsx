@@ -5,9 +5,10 @@ interface CaseStudyProps {
   description: string;
   imageUrl: string;
   index: number;
+  label?: string;
 }
 
-const CaseStudy = ({ title, description, imageUrl, index }: CaseStudyProps) => {
+const CaseStudy = ({ title, description, imageUrl, index, label }: CaseStudyProps) => {
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -39,6 +40,11 @@ const CaseStudy = ({ title, description, imageUrl, index }: CaseStudyProps) => {
     >
       <div className="container mx-auto lg:flex items-center gap-12">
         <div className="lg:w-1/2 mb-8 lg:mb-0">
+          {label && (
+            <span className="text-sm text-muted-foreground uppercase tracking-wider mb-2 block">
+              {label}
+            </span>
+          )}
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
           <p className="text-muted-foreground text-lg">{description}</p>
         </div>
