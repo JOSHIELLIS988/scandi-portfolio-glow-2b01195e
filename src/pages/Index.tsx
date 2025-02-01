@@ -24,9 +24,16 @@ const caseStudies = [
     ]
   },
   {
-    title: "Project Two",
-    description: "Strategic content creation and visual storytelling that helped establish a strong brand presence across multiple digital platforms.",
-    imageUrl: "/placeholder.svg",
+    title: "Newsletter Templates",
+    description: "Custom-designed HTML email templates optimized for all major email clients. Built with a modular approach for maximum flexibility and easy customization, while maintaining brand consistency across all communications.",
+    imageUrl: "/lovable-uploads/c5f5e1be-358b-4279-af04-055c1c5aa70d.png",
+    label: "Email Design",
+    additionalImages: [
+      "/lovable-uploads/47d44f5c-b01b-421d-a911-711ef234078a.png",
+      "/lovable-uploads/46947cbb-7837-437d-b5c2-b07ca3e7f186.png",
+      "/lovable-uploads/7200ba93-75d3-4233-9ca7-b0c79ce20d9e.png",
+      "/lovable-uploads/9bbad244-8dbb-4546-a0b7-3216cc08cd3f.png"
+    ]
   },
   {
     title: "Project Three",
