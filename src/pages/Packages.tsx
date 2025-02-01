@@ -1,82 +1,115 @@
 import Navigation from "@/components/Navigation";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Check } from "lucide-react";
 
 const Packages = () => {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen bg-background">
       <Navigation />
       <div className="container mx-auto px-6 pt-32 pb-16">
-        <h1 className="text-4xl font-semibold mb-8">Our Packages</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Basic Package */}
-          <div className="glass p-8 rounded-2xl">
-            <h2 className="text-2xl font-semibold mb-4">Basic</h2>
-            <p className="text-lg mb-6">Perfect for small businesses</p>
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-center">
-                <span className="mr-2">•</span>
-                Brand Identity Design
-              </li>
-              <li className="flex items-center">
-                <span className="mr-2">•</span>
-                Social Media Templates
-              </li>
-              <li className="flex items-center">
-                <span className="mr-2">•</span>
-                Basic Website Design
-              </li>
-            </ul>
-            <p className="text-2xl font-semibold mb-4">Starting at $2,000</p>
-          </div>
+        <h1 className="text-4xl font-semibold mb-8 animate-fade-in">Premium Content Packages</h1>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Premium Content Package */}
+          <Card className="glass animate-zoom-in">
+            <CardHeader>
+              <CardTitle className="text-2xl">Premium Content Package</CardTitle>
+              <CardDescription className="text-2xl font-semibold mt-2">€5,000</CardDescription>
+              <p className="mt-4 text-sm text-muted-foreground">
+                A comprehensive, high-end content package designed to elevate your brand with strategic, conversion-driven assets.
+              </p>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold mb-3">What's Included</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-2">
+                      <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
+                      <span>Three UGC videos with scripting and production</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
+                      <span>Five high-performing still ads</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
+                      <span>Three photorealistic 3D-rendered product shots</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
+                      <span>20-second high-quality 3D animation</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
+                      <span>Three custom newsletter templates</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
+                      <span>One blog post with Meta ads carousel</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-3">Why This Package?</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Traditional agencies charge €17,000 – €30,000 for this level of content. 
+                    This package delivers the same premium quality, strategy, and execution—without 
+                    unnecessary overhead. A cost-effective, high-impact solution for brands looking 
+                    to scale with best-in-class content.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
-          {/* Pro Package */}
-          <div className="glass p-8 rounded-2xl">
-            <h2 className="text-2xl font-semibold mb-4">Pro</h2>
-            <p className="text-lg mb-6">For growing businesses</p>
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-center">
-                <span className="mr-2">•</span>
-                Everything in Basic
-              </li>
-              <li className="flex items-center">
-                <span className="mr-2">•</span>
-                E-commerce Integration
-              </li>
-              <li className="flex items-center">
-                <span className="mr-2">•</span>
-                Content Strategy
-              </li>
-              <li className="flex items-center">
-                <span className="mr-2">•</span>
-                Monthly Analytics
-              </li>
-            </ul>
-            <p className="text-2xl font-semibold mb-4">Starting at $5,000</p>
-          </div>
-
-          {/* Enterprise Package */}
-          <div className="glass p-8 rounded-2xl">
-            <h2 className="text-2xl font-semibold mb-4">Enterprise</h2>
-            <p className="text-lg mb-6">Full-scale solutions</p>
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-center">
-                <span className="mr-2">•</span>
-                Everything in Pro
-              </li>
-              <li className="flex items-center">
-                <span className="mr-2">•</span>
-                Custom Development
-              </li>
-              <li className="flex items-center">
-                <span className="mr-2">•</span>
-                Dedicated Support
-              </li>
-              <li className="flex items-center">
-                <span className="mr-2">•</span>
-                Priority Updates
-              </li>
-            </ul>
-            <p className="text-2xl font-semibold mb-4">Contact for pricing</p>
-          </div>
+          {/* Pilot Content Package */}
+          <Card className="glass animate-zoom-in [animation-delay:200ms]">
+            <CardHeader>
+              <CardTitle className="text-2xl">Pilot Content Package</CardTitle>
+              <CardDescription className="text-2xl font-semibold mt-2">€2,500</CardDescription>
+              <p className="mt-4 text-sm text-muted-foreground">
+                A high-quality starter package designed for brands looking to test and optimize 
+                their content strategy before scaling.
+              </p>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold mb-3">What's Included</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-2">
+                      <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
+                      <span>One UGC video with scripting and production</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
+                      <span>Two high-performing still ads</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
+                      <span>One photorealistic 3D-rendered product shot</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
+                      <span>10-15 second 3D product animation</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Check className="mt-1 h-4 w-4 text-primary shrink-0" />
+                      <span>One custom newsletter template</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-3">Why This Package?</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Traditional agencies charge €7,000 – €12,000 for these assets. This package 
+                    delivers the same high-quality content at a fraction of the cost, making it 
+                    a perfect entry point for brands looking to test before scaling.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </main>
