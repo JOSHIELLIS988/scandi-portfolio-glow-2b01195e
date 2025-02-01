@@ -34,37 +34,37 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-6 pt-24">
-      <div className="text-center max-w-3xl">
+      <div className="text-center max-w-3xl mx-auto">
         <div 
           ref={avatarRef}
-          className="mb-8 opacity-0 translate-y-4 transition-all duration-700 ease-out"
+          className="mb-12 opacity-0 translate-y-4 transition-all duration-700 ease-out"
         >
-          <Avatar className="w-[168px] h-[168px] mx-auto border-2 border-white/10">
+          <Avatar className="w-[168px] h-[168px] mx-auto border-[0.5px] border-white/5 shadow-lg">
             <AvatarImage src="/lovable-uploads/2f32ec6d-f04c-4a85-b79b-bf4f3ab89295.png" alt="Ellis Joshua" />
           </Avatar>
         </div>
         <h1
           ref={titleRef}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 translate-y-4 transition-all duration-700 ease-out"
+          className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6 opacity-0 translate-y-4 transition-all duration-700 ease-out"
         >
           Ellis, Joshua
         </h1>
         <p
           ref={subtitleRef}
-          className="text-lg md:text-xl text-muted-foreground mb-4 opacity-0 translate-y-4 transition-all duration-700 delay-200 ease-out"
+          className="text-lg md:text-xl font-light text-muted-foreground/80 mb-6 opacity-0 translate-y-4 transition-all duration-700 delay-200 ease-out"
         >
           Specialised Content Creator for E-commerce Brands
         </p>
         <div
           ref={locationRef}
-          className="flex items-center justify-center gap-2 text-muted-foreground mb-12 opacity-0 translate-y-4 transition-all duration-700 delay-300 ease-out"
+          className="flex items-center justify-center gap-2 text-muted-foreground/60 mb-16 opacity-0 translate-y-4 transition-all duration-700 delay-300 ease-out"
         >
-          <MapPin size={16} />
-          <span>Barcelona</span>
+          <MapPin size={16} className="opacity-50" />
+          <span className="text-sm tracking-wide">Barcelona</span>
         </div>
         <p
           ref={descriptionRef}
-          className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto opacity-0 translate-y-4 transition-all duration-700 delay-400 ease-out"
+          className="text-base md:text-lg font-light leading-relaxed text-muted-foreground/80 max-w-2xl mx-auto opacity-0 translate-y-4 transition-all duration-700 delay-400 ease-out"
         >
           I create conversion-driven content packages for e-commerce brands, covering UGC production, 3D animation films, copywriting, product visuals, and newsletter design. By combining strategy and creativity, I craft engaging, high-performing content that enhances brand presence and drives measurable results across e-commerce platforms.
         </p>
