@@ -19,7 +19,8 @@ const caseStudies = [
       "/lovable-uploads/ac4b36d3-ee51-4355-bf86-5488f113eb99.png",
       "/lovable-uploads/923fa08a-da48-4843-99dc-289ebdf7c328.png",
       "/lovable-uploads/460506f7-2a64-4241-aefd-a416475f93be.png",
-      "/lovable-uploads/18a6535f-0859-4414-8461-3dca1edcbc4d.png"
+      "/lovable-uploads/18a6535f-0859-4414-8461-3dca1edcbc4d.png",
+      "/lovable-uploads/a979f773-c9df-4406-bfa4-9b5a9638b37d.png"
     ]
   },
   {
