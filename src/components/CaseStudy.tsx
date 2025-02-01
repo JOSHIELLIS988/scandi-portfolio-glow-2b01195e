@@ -131,7 +131,7 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
               <span className="text-xs text-muted-foreground uppercase tracking-wider mb-3 block text-left px-6 md:px-0">
                 Social Media Ads
               </span>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-none md:rounded-lg glass group">
+              <div className="relative aspect-square overflow-hidden rounded-none md:rounded-lg glass group">
                 <img
                   src={socialImages[currentSocialIndex]}
                   alt={`${title} social media ad`}
