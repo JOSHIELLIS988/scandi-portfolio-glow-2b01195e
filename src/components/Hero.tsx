@@ -1,11 +1,13 @@
 import { useEffect, useRef } from "react";
 import { MapPin } from "lucide-react";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const locationRef = useRef<HTMLDivElement>(null);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
+  const avatarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observerOptions = {
@@ -25,6 +27,7 @@ const Hero = () => {
     if (subtitleRef.current) observer.observe(subtitleRef.current);
     if (locationRef.current) observer.observe(locationRef.current);
     if (descriptionRef.current) observer.observe(descriptionRef.current);
+    if (avatarRef.current) observer.observe(avatarRef.current);
 
     return () => observer.disconnect();
   }, []);
@@ -32,6 +35,14 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center px-6">
       <div className="text-center max-w-3xl">
+        <div 
+          ref={avatarRef}
+          className="mb-8 opacity-0 translate-y-4 transition-all duration-700 ease-out"
+        >
+          <Avatar className="w-24 h-24 mx-auto border-2 border-white/10">
+            <AvatarImage src="/lovable-uploads/27f0f896-8625-478c-96d4-bfa00ebd8fd2.png" alt="Ellis Joshua" />
+          </Avatar>
+        </div>
         <h1
           ref={titleRef}
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 translate-y-4 transition-all duration-700 ease-out"
