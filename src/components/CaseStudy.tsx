@@ -52,12 +52,12 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
   return (
     <div
       ref={elementRef}
-      className={`min-h-screen flex items-center justify-center p-6 md:p-6 opacity-0 translate-y-8 transition-all duration-1000 ease-out ${
+      className={`min-h-screen flex items-center justify-center p-0 md:p-6 opacity-0 translate-y-8 transition-all duration-1000 ease-out ${
         index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
       }`}
     >
-      <div className="container mx-auto lg:flex items-center gap-12">
-        <div className="lg:w-1/2 mb-8 lg:mb-0 px-0 md:px-4">
+      <div className="container mx-auto lg:flex items-center gap-12 px-0 md:px-8">
+        <div className="lg:w-1/2 mb-8 lg:mb-0 px-6 md:px-4">
           {label && (
             <span className="text-xs text-muted-foreground uppercase tracking-wider mb-1 block">
               {label}
@@ -66,7 +66,7 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
           <p className="text-muted-foreground text-lg">{description}</p>
         </div>
-        <div className="lg:w-1/2 -mx-6 md:mx-0">
+        <div className="lg:w-1/2 -mx-0 md:-mx-0">
           {additionalImages && (
             <span className="text-xs text-muted-foreground uppercase tracking-wider mb-3 block text-left px-6 md:px-0">
               Product Shots
