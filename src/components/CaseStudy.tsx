@@ -71,8 +71,8 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
         index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
       }`}
     >
-      <div className="container mx-auto lg:flex items-center gap-12 px-0 md:px-8">
-        <div className="lg:w-1/2 mb-8 lg:mb-0 px-6 md:px-4">
+      <div className="container mx-auto lg:flex items-start gap-12 px-0 md:px-8">
+        <div className="lg:w-1/2 mb-8 lg:mb-0 px-6 md:px-4 lg:sticky lg:top-24">
           {label && (
             <span className="text-xs text-muted-foreground uppercase tracking-wider mb-1 block">
               {label}
@@ -87,11 +87,11 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
               <span className="text-xs text-white uppercase tracking-wider mb-1 block text-left px-6 md:px-0">
                 Product Shots
               </span>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-none md:rounded-lg glass group">
+              <div className="relative overflow-hidden rounded-none md:rounded-lg glass group">
                 <img
                   src={images[currentImageIndex]}
                   alt={title}
-                  className="w-full h-full object-cover transition-opacity duration-500"
+                  className="w-full h-full object-contain"
                   loading="lazy"
                 />
                 <Button
@@ -135,7 +135,7 @@ const CaseStudy = ({ title, description, imageUrl, index, label, additionalImage
                 <img
                   src={socialImages[currentSocialIndex]}
                   alt={`${title} social media ad`}
-                  className="w-full h-full object-cover transition-opacity duration-500"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
                 <Button
