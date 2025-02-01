@@ -23,6 +23,7 @@ const Navigation = () => {
           <div className="hidden lg:flex items-center space-x-8">
             <Link to="/" className="hover:opacity-80 transition-opacity">Work</Link>
             <Link to="/about" className="hover:opacity-80 transition-opacity">About</Link>
+            <Link to="/packages" className="hover:opacity-80 transition-opacity">Packages</Link>
             <a href="#contact" className="hover:opacity-80 transition-opacity">Contact</a>
           </div>
         </div>
@@ -43,6 +44,13 @@ const Navigation = () => {
                 onClick={() => setIsOpen(false)}
               >
                 About
+              </Link>
+              <Link
+                to="/packages"
+                className="hover:opacity-80 transition-opacity"
+                onClick={() => setIsOpen(false)}
+              >
+                Packages
               </Link>
               <a
                 href="#contact"
