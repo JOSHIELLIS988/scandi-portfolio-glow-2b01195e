@@ -28,8 +28,6 @@ const CaseStudy = ({
   title,
   description,
   imageUrl,
-  index,
-  label,
   additionalImages,
   socialMediaImages,
   newsletterImages,
@@ -53,17 +51,47 @@ const CaseStudy = ({
   return (
     <section ref={ref} className="py-24 md:py-32">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center">
-          <h2 className="text-3xl font-bold mb-4">{title}</h2>
-          <p className="text-lg text-muted-foreground text-center mb-8">{description}</p>
-          <img src={imageUrl} alt={title} className="w-full rounded-lg mb-8" />
+        <div className="flex flex-col items-center max-w-3xl mx-auto mb-24">
+          <h2 className="text-4xl font-bold mb-6">{title}</h2>
+          <p className="text-lg text-muted-foreground text-center mb-12">{description}</p>
+          <img 
+            src={imageUrl} 
+            alt={title} 
+            className="w-full rounded-2xl shadow-2xl mb-16" 
+          />
         </div>
-        <ProductStills images={additionalImages} isVisible={showContent} />
-        <Videos videos={videos} isVisible={showContent} />
-        <SocialMedia images={socialMediaImages} isVisible={showContent} />
-        <Newsletter images={newsletterImages} isVisible={showContent} />
-        <BlogPosts images={blogImages} isVisible={showContent} />
-        <Results results={results} isVisible={showContent} />
+        
+        <div className="space-y-32">
+          <ProductStills 
+            title="Product Stills"
+            images={additionalImages} 
+            isVisible={showContent} 
+          />
+          <Videos 
+            title="Campaign Videos"
+            videos={videos} 
+            isVisible={showContent} 
+          />
+          <SocialMedia 
+            title="Social Media"
+            images={socialMediaImages} 
+            isVisible={showContent} 
+          />
+          <Newsletter 
+            title="Newsletter"
+            images={newsletterImages} 
+            isVisible={showContent} 
+          />
+          <BlogPosts 
+            title="Blog Posts"
+            images={blogImages} 
+            isVisible={showContent} 
+          />
+          <Results 
+            results={results} 
+            isVisible={showContent} 
+          />
+        </div>
       </div>
     </section>
   );
