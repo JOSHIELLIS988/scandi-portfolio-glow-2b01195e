@@ -53,12 +53,7 @@ const caseStudies = [
         value: "+320%",
         label: "Avg ROAS return on Meta"
       }
-    ],
-    review: {
-      text: "The content elevated our brand and drove real results. High-quality UGC, stunning visuals, and a seamless process - highly recommend!",
-      author: "Amanda B",
-      role: "Founder"
-    }
+    ]
   }
 ];
 
@@ -82,7 +77,6 @@ const Index = () => {
             blogImages={study.blogImages}
             videos={study.videos}
             results={study.results}
-            review={study.review}
           />
         ))}
       </div>

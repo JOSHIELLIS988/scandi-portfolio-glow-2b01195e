@@ -6,7 +6,6 @@ import SocialMedia from "./case-study/SocialMedia";
 import Newsletter from "./case-study/Newsletter";
 import BlogPosts from "./case-study/BlogPosts";
 import Videos from "./case-study/Videos";
-import Review from "./case-study/Review";
 
 interface CaseStudyProps {
   title: string;
@@ -23,11 +22,6 @@ interface CaseStudyProps {
     value: string;
     label: string;
   }>;
-  review?: {
-    text: string;
-    author: string;
-    role: string;
-  };
 }
 
 const CaseStudy = ({
@@ -41,8 +35,7 @@ const CaseStudy = ({
   newsletterImages,
   blogImages,
   videos,
-  results,
-  review
+  results
 }: CaseStudyProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -71,7 +64,6 @@ const CaseStudy = ({
         <Newsletter images={newsletterImages} isVisible={showContent} />
         <BlogPosts images={blogImages} isVisible={showContent} />
         <Results results={results} isVisible={showContent} />
-        {review && <Review review={review} isVisible={showContent} />}
       </div>
     </section>
   );
