@@ -49,26 +49,25 @@ const CaseStudy = ({
   }, [isInView]);
 
   return (
-    <section ref={ref} className="py-24 md:py-32">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center max-w-3xl mx-auto mb-24">
-          <h2 className="text-4xl font-bold mb-6">{title}</h2>
-          <p className="text-lg text-muted-foreground text-center mb-12">{description}</p>
+    <section ref={ref} className="py-20">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col items-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-4xl font-bold mb-4 tracking-tight">{title}</h2>
+          <p className="text-lg text-muted-foreground text-center mb-10 max-w-2xl">{description}</p>
           <img 
             src={imageUrl} 
             alt={title} 
-            className="w-full rounded-2xl shadow-2xl mb-16" 
+            className="w-full rounded-2xl shadow-2xl" 
           />
         </div>
         
-        <div className="space-y-32">
+        <div className="space-y-20">
           <ProductStills 
             title="Product Stills"
             images={additionalImages} 
             isVisible={showContent} 
           />
           <Videos 
-            title="Campaign Videos"
             videos={videos} 
             isVisible={showContent} 
           />
