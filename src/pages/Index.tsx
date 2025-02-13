@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import CaseStudy from "@/components/CaseStudy";
@@ -12,7 +13,9 @@ const caseStudies = [
     additionalImages: [
       "/lovable-uploads/bda14766-56b8-4dbb-a1eb-467c9c6fbfcf.png",
       "/lovable-uploads/f176f5a4-90c6-4847-9b91-922cff6c943d.png",
-      "/lovable-uploads/1ef5d7c0-df63-41bb-89d5-eeac6dbe4133.png"
+      "/lovable-uploads/1ef5d7c0-df63-41bb-89d5-eeac6dbe4133.png",
+      "/lovable-uploads/dff014fa-5c64-43da-afce-d75cecf14db8.png",
+      "/lovable-uploads/3b1150a4-a428-4ae5-b1ab-e5a9fb1fa289.png"
     ],
     socialMediaImages: [
       "/lovable-uploads/96743e08-2878-4a6d-9d14-3f1f3803e915.png",
