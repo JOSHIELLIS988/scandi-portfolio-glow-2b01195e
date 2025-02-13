@@ -11,6 +11,7 @@ const caseStudies = [
     imageUrl: "/lovable-uploads/43bbf2c3-0ce2-4086-83cd-fb61d68d2166.png",
     label: "Client",
     additionalImages: [
+      "/lovable-uploads/14690d55-7692-44a9-9270-83fdebfd1240.png",
       "/lovable-uploads/bda14766-56b8-4dbb-a1eb-467c9c6fbfcf.png",
       "/lovable-uploads/f176f5a4-90c6-4847-9b91-922cff6c943d.png",
       "/lovable-uploads/1ef5d7c0-df63-41bb-89d5-eeac6dbe4133.png",
