@@ -1,3 +1,4 @@
+
 const Contact = () => {
   return (
     <section id="contact" className="min-h-screen flex items-center justify-center px-6">
@@ -9,7 +10,7 @@ const Contact = () => {
           Ready to elevate your brand's content? Let's discuss how we can make your vision come to life.
         </p>
         <a
-          href="mailto:contact@example.com"
+          href="mailto:ellis@ellisjoshua.com"
           className="inline-block px-8 py-4 rounded-lg glass hover:bg-white/10 transition-all duration-300 text-sm tracking-wide"
         >
           Get in Touch
