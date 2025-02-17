@@ -48,7 +48,7 @@ const Hero = () => {
           ref={titleRef}
           className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6 opacity-0 translate-y-4 transition-all duration-700 ease-out"
         >
-          Ellis, Joshuaa
+          Ellis, Joshua
         </h1>
         <p
           ref={subtitleRef}
