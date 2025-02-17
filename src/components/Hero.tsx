@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from "react";
 import { MapPin } from "lucide-react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
@@ -47,7 +48,7 @@ const Hero = () => {
           ref={titleRef}
           className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6 opacity-0 translate-y-4 transition-all duration-700 ease-out"
         >
-          Ellis, Joshua
+          Ellis, Joshuaa
         </h1>
         <p
           ref={subtitleRef}
