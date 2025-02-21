@@ -11,7 +11,7 @@ const Packages = () => {
         <h1 className="text-4xl font-semibold mb-8 animate-fade-in">Content Packages</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Premium Launch Package */}
-          <Card className="glass animate-zoom-in">
+          <Card className="glass animate-zoom-in flex flex-col">
             <CardHeader>
               <CardTitle className="text-2xl">Premium Launch Package</CardTitle>
               <CardDescription className="text-2xl font-semibold mt-2">€5,000</CardDescription>
@@ -19,8 +19,8 @@ const Packages = () => {
                 A comprehensive, high-end content package designed to elevate your brand with strategic, conversion-driven assets.
               </p>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
+            <CardContent className="flex-1 flex flex-col">
+              <div className="space-y-6 flex-1">
                 <div>
                   <h3 className="font-semibold mb-3">What's Included</h3>
                   <ul className="space-y-3">
@@ -42,7 +42,7 @@ const Packages = () => {
                     </li>
                   </ul>
                 </div>
-                <div>
+                <div className="mt-auto">
                   <h3 className="font-semibold mb-3">Why This Package?</h3>
                   <p className="text-sm text-muted-foreground">
                     Traditional agencies charge €17,000 – €30,000 for this level of content. 
@@ -56,7 +56,7 @@ const Packages = () => {
           </Card>
 
           {/* Partner Package */}
-          <Card className="glass animate-zoom-in [animation-delay:200ms]">
+          <Card className="glass animate-zoom-in [animation-delay:200ms] flex flex-col">
             <CardHeader>
               <CardTitle className="text-2xl">Partner Package</CardTitle>
               <CardDescription className="text-2xl font-semibold mt-2">€2,500/month</CardDescription>
@@ -65,8 +65,8 @@ const Packages = () => {
                 that keep your brand fresh and engaging.
               </p>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
+            <CardContent className="flex-1 flex flex-col">
+              <div className="space-y-6 flex-1">
                 <div>
                   <h3 className="font-semibold mb-3">Monthly Deliverables</h3>
                   <ul className="space-y-3">
@@ -88,7 +88,7 @@ const Packages = () => {
                     </li>
                   </ul>
                 </div>
-                <div>
+                <div className="mt-auto">
                   <h3 className="font-semibold mb-3">Why This Package?</h3>
                   <p className="text-sm text-muted-foreground">
                     Traditional agencies charge €7,000 – €12,000 monthly for these assets. This package 
